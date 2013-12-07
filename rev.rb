@@ -18,6 +18,7 @@ while page < pageEnd
 	uri = "http://product.rakuten.co.jp/product/#{product}/review/#{page}"
 	doc = Nokogiri::HTML(open(uri))
 	star = doc.css("span.txtPoint").text.unpack("a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4")
+	#レビュー本文の配列を切るための文字列を指定
 	splitter = doc.css("div.revInfo").text.split(/\n\n/)
 	
 	number = 0
